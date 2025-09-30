@@ -1,0 +1,48 @@
+inital state:  (('A',), ('D', 'E'), ('B', 'C'))
+   E  C
+A  D  B
+-------
+goal state:  (('B', 'C'), ('D', 'E', 'A'), ())
+   A   
+C  E   
+B  D   
+-------
+Using heuristic: h1
+iter=1, depth=0, pathcost=0, heuristic=8, score=8, children=6, Qsize=0
+iter=2, depth=1, pathcost=1, heuristic=7, score=8, children=4, Qsize=5
+iter=3, depth=1, pathcost=1, heuristic=7, score=8, children=6, Qsize=6
+iter=4, depth=1, pathcost=1, heuristic=8, score=9, children=6, Qsize=9
+iter=5, depth=2, pathcost=2, heuristic=7, score=9, children=6, Qsize=12
+iter=6, depth=2, pathcost=2, heuristic=7, score=9, children=4, Qsize=15
+iter=7, depth=1, pathcost=1, heuristic=8, score=9, children=4, Qsize=16
+iter=8, depth=2, pathcost=2, heuristic=7, score=9, children=4, Qsize=17
+iter=9, depth=2, pathcost=2, heuristic=7, score=9, children=4, Qsize=18
+iter=10, depth=3, pathcost=3, heuristic=6, score=9, children=4, Qsize=19
+iter=11, depth=4, pathcost=4, heuristic=5, score=9, children=4, Qsize=20
+success! iter=11, cost=4, depth=4, max queue size=21
+move 0, pathcost=0, heuristic=8, f(n)=g(n)+h(n)=8
+A
+DE
+BC
+>>>>>>>>>>
+move 1, pathcost=1, heuristic=7, f(n)=g(n)+h(n)=8
+_
+DEA
+BC
+>>>>>>>>>>
+move 2, pathcost=2, heuristic=7, f(n)=g(n)+h(n)=9
+_
+DEAC
+B
+>>>>>>>>>>
+move 3, pathcost=3, heuristic=6, f(n)=g(n)+h(n)=9
+B
+DEAC
+_
+>>>>>>>>>>
+move 4, pathcost=4, heuristic=5, f(n)=g(n)+h(n)=9
+BC
+DEA
+_
+>>>>>>>>>>
+statistics: probs/probA04.bwp method Astar planlen 4 iter 11 maxq 21

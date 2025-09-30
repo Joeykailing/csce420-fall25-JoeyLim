@@ -1,0 +1,84 @@
+inital state:  (('B', 'C', 'D'), ('A',), ('E',))
+D      
+C      
+B  A  E
+-------
+goal state:  ((), ('D', 'C', 'E'), ('A', 'B'))
+   E   
+   C  B
+   D  A
+-------
+Using heuristic: h1
+iter=1, depth=0, pathcost=0, heuristic=10, score=10, children=6, Qsize=0
+iter=2, depth=1, pathcost=1, heuristic=10, score=11, children=6, Qsize=5
+iter=3, depth=1, pathcost=1, heuristic=10, score=11, children=4, Qsize=8
+iter=4, depth=2, pathcost=2, heuristic=9, score=11, children=6, Qsize=9
+iter=5, depth=1, pathcost=1, heuristic=10, score=11, children=4, Qsize=12
+iter=6, depth=2, pathcost=2, heuristic=9, score=11, children=4, Qsize=13
+iter=7, depth=2, pathcost=2, heuristic=10, score=12, children=6, Qsize=14
+iter=8, depth=2, pathcost=2, heuristic=10, score=12, children=4, Qsize=17
+iter=9, depth=3, pathcost=3, heuristic=9, score=12, children=4, Qsize=18
+iter=10, depth=1, pathcost=1, heuristic=11, score=12, children=4, Qsize=19
+iter=11, depth=2, pathcost=2, heuristic=10, score=12, children=2, Qsize=20
+iter=12, depth=3, pathcost=3, heuristic=9, score=12, children=6, Qsize=19
+iter=13, depth=1, pathcost=1, heuristic=11, score=12, children=4, Qsize=22
+iter=14, depth=3, pathcost=3, heuristic=9, score=12, children=4, Qsize=23
+iter=15, depth=3, pathcost=3, heuristic=9, score=12, children=4, Qsize=24
+iter=16, depth=4, pathcost=4, heuristic=8, score=12, children=4, Qsize=25
+iter=17, depth=2, pathcost=2, heuristic=10, score=12, children=6, Qsize=26
+iter=18, depth=2, pathcost=2, heuristic=10, score=12, children=4, Qsize=29
+iter=19, depth=3, pathcost=3, heuristic=9, score=12, children=6, Qsize=29
+iter=20, depth=3, pathcost=3, heuristic=9, score=12, children=6, Qsize=32
+iter=21, depth=3, pathcost=3, heuristic=9, score=12, children=6, Qsize=33
+iter=22, depth=2, pathcost=2, heuristic=10, score=12, children=2, Qsize=36
+iter=23, depth=4, pathcost=4, heuristic=8, score=12, children=6, Qsize=35
+iter=24, depth=4, pathcost=4, heuristic=8, score=12, children=6, Qsize=38
+iter=25, depth=4, pathcost=4, heuristic=8, score=12, children=4, Qsize=41
+iter=26, depth=4, pathcost=4, heuristic=8, score=12, children=6, Qsize=42
+iter=27, depth=5, pathcost=5, heuristic=7, score=12, children=4, Qsize=45
+iter=28, depth=5, pathcost=5, heuristic=7, score=12, children=6, Qsize=46
+iter=29, depth=5, pathcost=5, heuristic=7, score=12, children=4, Qsize=48
+iter=30, depth=6, pathcost=6, heuristic=6, score=12, children=6, Qsize=49
+iter=31, depth=7, pathcost=7, heuristic=5, score=12, children=4, Qsize=50
+success! iter=31, cost=7, depth=7, max queue size=51
+move 0, pathcost=0, heuristic=10, f(n)=g(n)+h(n)=10
+BCD
+A
+E
+>>>>>>>>>>
+move 1, pathcost=1, heuristic=11, f(n)=g(n)+h(n)=12
+BCD
+_
+EA
+>>>>>>>>>>
+move 2, pathcost=2, heuristic=10, f(n)=g(n)+h(n)=12
+BC
+D
+EA
+>>>>>>>>>>
+move 3, pathcost=3, heuristic=9, f(n)=g(n)+h(n)=12
+B
+DC
+EA
+>>>>>>>>>>
+move 4, pathcost=4, heuristic=8, f(n)=g(n)+h(n)=12
+BA
+DC
+E
+>>>>>>>>>>
+move 5, pathcost=5, heuristic=7, f(n)=g(n)+h(n)=12
+BA
+DCE
+_
+>>>>>>>>>>
+move 6, pathcost=6, heuristic=6, f(n)=g(n)+h(n)=12
+B
+DCE
+A
+>>>>>>>>>>
+move 7, pathcost=7, heuristic=5, f(n)=g(n)+h(n)=12
+_
+DCE
+AB
+>>>>>>>>>>
+statistics: probs/probA07.bwp method Astar planlen 7 iter 31 maxq 51

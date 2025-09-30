@@ -1,0 +1,146 @@
+File           | Planlen | Iter   | MaxQ
+----------------+---------+--------+-------
+probA03.bwp    |       3 |       4 |      10
+probA04.bwp    |       4 |      11 |      21
+probA05.bwp    |       5 |      14 |      32
+probA06.bwp    |       7 |      15 |      29
+probA07.bwp    |       7 |      31 |      51
+probA08.bwp    |       8 |      62 |     100
+probA09.bwp    |       9 |     194 |     224
+probA10.bwp    |      10 |     104 |     116
+probA11.bwp    |      11 |     408 |     427
+probB03.bwp    |       3 |       6 |      58
+probB04.bwp    |       4 |       7 |      86
+probB05.bwp    |       5 |       7 |      82
+probB06.bwp    |       6 |       9 |      83
+probB07.bwp    |       7 |      52 |     525
+probB08.bwp    |       8 |     125 |     988
+probB09.bwp    |       8 |     199 |    1569
+probB10.bwp    |       9 |     351 |    2695
+probB11.bwp    |       9 |     230 |    1935
+probB12.bwp    |       9 |      25 |     288
+probB13.bwp    |      13 |    3991 |   27116
+probB14.bwp    |      13 |    3709 |   26466
+probB15.bwp    |      14 |   26234 |  166013
+probB16.bwp    |      15 |   41562 |  249781
+probB17.bwp    |      16 |   45401 |  246999
+probB18.bwp    |      12 |     228 |    1980
+probB19.bwp    |      15 |    1032 |    7370
+probB20.bwp    |      15 |   84998 |  431276
+
+
+
+
+
+Heuristic Name: h1
+
+This heuristic is designed to estimate how far a state is from the goal using two ideas:
+	1.	Reward blocks that are already in the correct position
+	2.	Penalize blocks that are in the wrong position but correct stack (the worse the order the more penalization)
+	This heuristic would first add costs to add blocks then remove cost for blocks in correct position and correct stack
+	it then adds costs using a loop to blocks which are in the correct stack but wrong position.
+
+
+How it Works:
+
+For each stack in the current and goal state:
+	•	Count the total number of blocks across both states.
+	•	Subtract 1 for every block that is in the right position (correct stack and order).
+	•	If a block is in the right stack but wrong position, add a penalty depending how bad the position is (the deeper the incorrect positioning is the higher the penalty how far it is, adding 1 cost penalty for how deep it is example 2 shows how the penality is calculated). 
+	•	If a block is in a completely wrong stack, do not subtract anything (it is already part of the cost).
+
+
+
+
+
+Example 1:
+
+Initial State:
+
+Stack 1: A
+Stack 2: D, E
+Stack 3: B, C
+
+   E  C
+A  D  B
+-------
+
+Goal State:
+
+Stack 1: B, C
+Stack 2: D, E, A
+Stack 3: (empty)
+
+   A
+C  E
+B  D
+-------
+
+	•	All blocks except D and E are misplaced (wrong stack but none are wrong order)
+
+Heuristic h1 Score: 8
+
+- Stack 1: 'A' should be in Stack 2 → mismatch → +3 base
+- Stack 2: 'D' and 'E' are in correct position → -2 (matches) → +3 base
+- Stack 3: contains 'B' and 'C' → should be in Stack 1 → +2 base
+Total heuristic: 10 - 2 = 8
+
+⸻
+
+Example 2:
+
+Initial State:
+
+Stack 0: ('A', 'D')
+Stack 1: ('H',)
+Stack 2: ('C', 'E', 'F', 'J')
+Stack 3: ('B', 'I')
+Stack 4: ('G',)
+
+
+
+Goal State:
+
+Stack 0: ('I', 'A')
+Stack 1: ()           ← (empty)
+Stack 2: ('G',)
+Stack 3: ('D', 'F', 'J', 'B', 'H')
+Stack 4: ('C', 'E')
+
+
+
+Computed h1 Score: 
+- stack 1: 
+Initial: ('A', 'D')
+Goal: ('I', 'A')
+	•	len = 2 + 2 = 4 → total_block = 4
+	•	Compare:
+	•	'A' ≠ 'I', but 'A' is in goal -> penalty +1
+	•	'D' ≠ 'A', 'D' not in goal stack → no change
+	contributes +5
+
+
+- stack 2: 
+Initial: ('H',)
+Goal: ()
+	•	len = 1 + 0 = 1 → contributes +1
+
+- stack 3: 
+Initial: ('C', 'E', 'F', 'J')
+Goal: ('G',)
+	•	len = 4 + 1 = 5 
+	contributes +5
+
+stack 4:
+Initial: ('B', 'I')
+Goal: ('D', 'F', 'J', 'B', 'H')
+	•	len = 2 + 5 = 7 
+	•	'B' ≠ 'D', but 'B' is in goal stack → penalty +2 
+	contributes +9
+Stack 5:
+Initial: ('G',)
+Goal: ('C', 'E')
+	•	len = 1 + 2 = 3 
+	contributes +3
+
+total heuristic score is 5+1+5+9+3 = 23
