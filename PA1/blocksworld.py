@@ -131,95 +131,65 @@ def reconstruct_path(node):
 
 def a_star_search(start, goal, successors_fn, h_fn, max_iters=100000):
     """
-    start: initial state (tuple of stacks)
-    goal: goal state
-    successors_fn: function(state) -> list of successor states
-    h_fn: heuristic function(state, goal) -> estimated cost to goal
+    A* Search
     """
     import heapq
-
-    frontier = []
+    priority_queue = []
     start_node = Node(start, g=0, h=h_fn(start, goal))
-    heapq.heappush(frontier, start_node)
-
-    reached = {start: start_node}
-    iterations = 0
+    heapq.heappush(priority_queue, start_node)
+    visited = {start: start_node}
+    itr = 0
     maxq = 1
-
-    while frontier and iterations < max_iters:
-        iterations += 1
-        node = heapq.heappop(frontier)
-        print(f"iter={iterations}, depth={node.g}, pathcost={node.g}, heuristic={node.h}, score={node.f}, children=", end='')
-
+    while priority_queue and itr < max_iters:
+        itr += 1
+        node = heapq.heappop(priority_queue)
+        print(f"iter={itr}, depth={node.g}, pathcost={node.g}, heuristic={node.h}, score={node.f}, children=", end='')
         children = successors_fn(node.state)
-        print(f"{len(children)}, Qsize={len(frontier)}")
-
+        print(f"{len(children)}, Qsize={len(priority_queue)}")
         if node.state == goal:
-            return reconstruct_path(node), iterations, maxq
-
-        for succ, move in successors_fn(node.state):  # succ = new_state
-            
+            return reconstruct_path(node), itr, maxq
+        for succ, move in successors_fn(node.state):  #
             g = node.g + 1  # every move costs 1
             h = h_fn(succ, goal)
             child = Node(succ, parent=node, g=g, h=h, action=move)
-
-            if succ not in reached or g < reached[succ].g:
-                reached[succ] = child
-                heapq.heappush(frontier, child)
+            if succ not in visited or g < visited[succ].g:
+                visited[succ] = child
+                heapq.heappush(priority_queue, child)
                 # print(f"\nGenerated child (g={g}, h={h}, f={g+h}):")
                 # print_state(succ)
-
-        maxq = max(maxq, len(frontier))
-
-
-    return None, iterations, maxq
+        maxq = max(maxq, len(priority_queue))
+    return None, itr, maxq
 
 # ---------------- MAIN ---------------- #
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("usage: python blocksworld.py <filename> [-H H0|H1|Hbest] [-MAX_ITERS N]")
-        sys.exit(1)
     filename = os.path.join("probs", sys.argv[1])
     heuristic_flag = "Hbest"
     max_iters = 100000
-
     if "-H" in sys.argv:
         heuristic_flag = sys.argv[sys.argv.index("-H")+1]
     if "-MAX_ITERS" in sys.argv:
         max_iters = int(sys.argv[sys.argv.index("-MAX_ITERS")+1])
-
     if heuristic_flag == "H0":
         heuristic = h0
     elif heuristic_flag == "H1":
         heuristic = h1
-    elif heuristic_flag == "H2":
-        heuristic = h2
     else:
         heuristic = h_best
-
     start, goal = read_bwp(filename)
 
     print("Using heuristic:", heuristic.__name__)
-
     solution, iters, maxq = a_star_search(start, goal, successors, heuristic, max_iters)
-    
-
-    # Get just the file name, e.g. "probA05.bwp"
     problem_name = os.path.basename(filename)
-
-    # Prepare result line
     if solution:
         planlen = len(solution) - 1
         result_line = f"{problem_name:<14} | {planlen:>7} | {iters:>7} | {maxq:>7}\n"
     else:
         result_line = f"{problem_name:<14} | {'FAILED':>7} | {iters:>7} | {maxq:>7}\n"
 
-
     if solution:
         planlen = len(solution) - 1
         print(f"success! iter={iters}, cost={planlen}, depth={planlen}, max queue size={maxq}")
-
         for i, state in enumerate(solution):
             g = i
             h = heuristic(state, goal)
@@ -228,8 +198,6 @@ if __name__ == "__main__":
             for stack in state:
                 print("".join(stack) if stack else "_")
             print(">>>>>>>>>>")
-
-        # Print final statistics line (mimic instructor format)
         print(f"statistics: probs/{problem_name} method Astar planlen {planlen} iter {iters} maxq {maxq}")
 
     else:
