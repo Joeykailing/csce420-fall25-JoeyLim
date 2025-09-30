@@ -1,8 +1,6 @@
-# Blocksworld A* Search – CSCE 420 PA1
+# CSCE 420 PA1
 
 Author: Joey Lim  
-File: `blocksworld.py`  
-Language: Python 3
 
 
 ## Overview
