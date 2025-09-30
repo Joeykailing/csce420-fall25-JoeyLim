@@ -4,13 +4,11 @@ Author: Joey Lim
 File: `blocksworld.py`  
 Language: Python 3
 
----
 
 ## Overview
 
 This program solves the Blocksworld problem using A* search. It reads a `.bwp` file containing an initial and goal block configuration and outputs the sequence to solve it with a heuristic.
 
----
 
 ## How to Run
 
