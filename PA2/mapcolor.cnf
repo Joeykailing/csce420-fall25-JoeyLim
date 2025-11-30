@@ -1,0 +1,94 @@
+# regions: NSW, Q, SA, NT, WA, V, T
+# colors: R, G, B
+# format: <Region><Color> -- NSWR = NSW is Red
+
+# At least one color per region
+NSWR NSWG NSWB
+QR QG QB
+SAR SAG SAB
+NTR NTG NTB
+WAR WAG WAB
+VR VG VB
+TR TG TB
+
+# most one color per region
+# NSW
+-NSWR -NSWG
+-NSWR -NSWB
+-NSWG -NSWB
+
+# Q
+-QR -QG
+-QR -QB
+-QG -QB
+
+# SA
+-SAR -SAG
+-SAR -SAB
+-SAG -SAB
+
+# NT
+-NTR -NTG
+-NTR -NTB
+-NTG -NTB
+
+# WA
+-WAR -WAG
+-WAR -WAB
+-WAG -WAB
+
+# V
+-VR -VG
+-VR -VB
+-VG -VB
+
+# T
+-TR -TG
+-TR -TB
+-TG -TB
+
+# neighbors cannot share the same color
+# WA–NT
+-WAR -NTR
+-WAG -NTG
+-WAB -NTB
+
+# WA–SA
+-WAR -SAR
+-WAG -SAG
+-WAB -SAB
+
+# NT–SA
+-NTR -SAR
+-NTG -SAG
+-NTB -SAB
+
+# NT–Q
+-NTR -QR
+-NTG -QG
+-NTB -QB
+
+# SA–Q
+-SAR -QR
+-SAG -QG
+-SAB -QB
+
+# SA–NSW
+-SAR -NSWR
+-SAG -NSWG
+-SAB -NSWB
+
+# SA–V
+-SAR -VR
+-SAG -VG
+-SAB -VB
+
+# Q–NSW
+-QR -NSWR
+-QG -NSWG
+-QB -NSWB
+
+# NSW–V
+-NSWR -VR
+-NSWG -VG
+-NSWB -VB

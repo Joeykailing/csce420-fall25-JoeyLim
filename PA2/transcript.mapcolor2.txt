@@ -1,0 +1,49 @@
+model: {'NSWR': 0, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': 0, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 0, 'TG': 0, 'TB': 0}
+model: {'NSWR': 0, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 0, 'TG': 0, 'TB': 0}
+model: {'NSWR': -1, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 0, 'TG': 0, 'TB': 0}
+model: {'NSWR': -1, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': 0, 'TB': 0}
+model: {'NSWR': -1, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': 0}
+model: {'NSWR': -1, 'NSWG': 0, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+branch on NSWG
+trying NSWG = 1
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': 0, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': 0, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 0, 'QG': 0, 'QB': 0, 'SAR': 0, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 0, 'QG': -1, 'QB': 0, 'SAR': 0, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': 0, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 0, 'QG': -1, 'QB': 0, 'SAR': 0, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+branch on QR
+trying QR = 1
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': 0, 'SAR': 0, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': 0, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 0, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': 0, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 0, 'NTB': 0, 'WAR': 0, 'WAG': 0, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 0, 'NTB': -1, 'WAR': 0, 'WAG': 0, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 1, 'NTB': -1, 'WAR': 0, 'WAG': 0, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 1, 'NTB': -1, 'WAR': 0, 'WAG': -1, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 1, 'NTB': -1, 'WAR': 1, 'WAG': -1, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': 0, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 1, 'NTB': -1, 'WAR': 1, 'WAG': -1, 'WAB': -1, 'VR': 0, 'VG': -1, 'VB': -1, 'TR': 1, 'TG': -1, 'TB': -1}
+model: {'NSWR': -1, 'NSWG': 1, 'NSWB': -1, 'QR': 1, 'QG': -1, 'QB': -1, 'SAR': -1, 'SAG': -1, 'SAB': 1, 'NTR': -1, 'NTG': 1, 'NTB': -1, 'WAR': 1, 'WAG': -1, 'WAB': -1, 'VR': 1, 'VG': -1, 'VB': -1, 'TR': 1, 'TG': -1, 'TB': -1}
+solution:
+NSWB: -1
+NSWG: 1
+NSWR: -1
+NTB: -1
+NTG: 1
+NTR: -1
+QB: -1
+QG: -1
+QR: 1
+SAB: 1
+SAG: -1
+SAR: -1
+TB: -1
+TG: -1
+TR: 1
+VB: -1
+VG: -1
+VR: 1
+WAB: -1
+WAG: -1
+WAR: 1
+total DPLL calls: 22
